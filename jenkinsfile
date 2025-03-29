@@ -5,9 +5,9 @@ pipeline {
 		nodeJs 'node_eva'
 	}
 
-	job {
+	// job {
 
-	}
+	// }
 
 	stages {
 		stage('Clone repo') {
