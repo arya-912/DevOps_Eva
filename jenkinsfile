@@ -1,64 +1,64 @@
-// pipeline {
-// 	agent any
-
-// 	tools {
-// 		nodeJs 'node_eva'
-// 	}
-
-// 	// job {
-
-// 	// }
-
-// 	stages {
-// 		stage('Clone repo') {
-// 			steps {
-// 				sh 'git clone DevOps_Eva'
-// 			}
-// 		}
-// 		stage('Install dependencies') {
-// 			steps {
-// 				sh 'npm install'
-// 			}
-// 		}
-// 		stage('Run the test') {
-// 			steps {
-// 				sh 'npm test' || echo "No tests defined"
-// 			}
-// 		}
-// 		stage('Build') {
-// 			steps {
-// 				sh 'npm run build'
-// 			}
-// 		}
-// 	}
-// }
-
-
 pipeline {
 	agent any
 
 	tools {
-		maven 'Maven01'
+		nodeJs 'node_eva'
 	}
 
+	// job {
+
+	// }
+
 	stages {
+		stage('Clone repo') {
+			steps {
+				sh 'git clone DevOps_Eva'
+			}
+		}
+		stage('Install dependencies') {
+			steps {
+				sh 'npm install'
+			}
+		}
+		stage('Run the test') {
+			steps {
+				sh 'npm test' || echo "No tests defined"
+			}
+		}
 		stage('Build') {
 			steps {
-				sh 'nvm clean package'
+				sh 'npm run build'
 			}
 		}
-		stage('Test') {
-			steps {
-				sh 'nvm test'
-			}
-		}
-		// stage('Run JAR') {
-		// 	steps {
-		// 		script {
-		// 			// def output = sh(script: 'java -jar target/simple-java-project-1.0-SNAPSHOT.jar', returnStdout: true)
-		// 			def output = sh(script: 'java -jar target/simpleb7bhuhbuu					echo "output"
-		// 		}
-		// 	}
-		// }
 	}
 }
+
+
+// pipeline {
+// 	agent any
+
+// 	tools {
+// 		maven 'Maven01'
+// 	}
+
+// 	stages {
+// 		stage('Build') {
+// 			steps {
+// 				sh 'nvm clean package'
+// 			}
+// 		}
+// 		stage('Test') {
+// 			steps {
+// 				sh 'nvm test'
+// 			}
+// 		}
+// 		// stage('Run JAR') {
+// 		// 	steps {
+// 		// 		script {
+// 		// 			// def output = sh(script: 'java -jar target/simple-java-project-1.0-SNAPSHOT.jar', returnStdout: true)
+// 		// 			def output = sh(script: 'java -jar target/simpleb7bhuhbuu					echo "output"
+// 		// 		}
+// 		// 	}
+// 		// }
+// 	}
+// }
