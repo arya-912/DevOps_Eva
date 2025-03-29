@@ -10,11 +10,11 @@ pipeline {
 	// }
 
 	stages {
-		stage('Clone repo') {
-			steps {
-				sh 'git clone DevOps_Eva'
-			}
-		}
+		// stage('Clone repo') {
+		// 	steps {
+		// 		sh 'git clone DevOps_Eva'
+		// 	}
+		// }
 		stage('Install dependencies') {
 			steps {
 				sh 'npm install'
