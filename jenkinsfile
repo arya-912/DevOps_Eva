@@ -12,6 +12,9 @@ pipeline {
 	stages {
 		stage('Clone repo') {
 			steps {
+				// bat 'git branch DevOps/Eva02'
+				// bat 'git switch DevOps/Eva02'
+				// bat 'git s'
 				bat 'git clone https://github.com/arya-912/DevOps_Eva'
 			}
 		}
