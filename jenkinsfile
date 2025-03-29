@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 	tools {
-		nodeJs 'node_eva'
+		nodejs 'node_eva'
 	}
 
 	// job {
